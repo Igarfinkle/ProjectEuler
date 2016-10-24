@@ -107,7 +107,7 @@ def sigma(f,a,n):
     return x
 
 
-#lists n in digits
+#lists n in digits, LEAST SIGNIFICANT DIGIT FIRST
 def digitlist(n):
     num=n
     l=[]
@@ -116,6 +116,14 @@ def digitlist(n):
         num=num/10
     return l
 
+
+def convert(tupl):
+    total=0
+    power=0
+    for char in tupl:
+        total+=int(char)*(10**power)
+        power+=1
+    return total
 
 # nth fibonacci number where F_0=0 and F_1=1
 def fibonacci(k):
@@ -223,6 +231,9 @@ def hexagon(n):
         A.append((x+1)*(2*x+1))
     return A
 
+def polygonal(n,s):
+    return (n*n*(s-2)-n*(s-4))/2
+
 
 def removelastdigit(n):
     return n/10
@@ -253,3 +264,11 @@ def pascal(n):
         A.append(1)
         T.append(A)
     return T
+
+
+def lowercase_letter_to_number(c):
+    return ord(c)-96
+
+def uppercase_letter_to_number(c):
+    return ord(c)-64
+
